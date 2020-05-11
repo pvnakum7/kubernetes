@@ -1,0 +1,25 @@
+Kubernetes Use Cases
+
+
+ 1. Simple apps
+	(How to get your app up and running by deploying it on a Kubernetes cluster)
+
+ 2. Microservices
+	Orchestrating Complicated apps based on microservice
+	Architecture with many components.
+
+3. Lift and Shift
+	Facilitating the movie of on-prem apps to the cloud
+
+4. Cloud Native Network Functions
+	Managing Containers with encapsulated(Included) network functions	
+5. machine Learning
+	managing Machine learning workflows to deploy faster
+	Al-based appps
+6. Heavy Computing
+	Enable computing-heavy  Tasks
+
+7. CI/CD
+
+	CI/CD task are easier to perform with kubernetes	
+

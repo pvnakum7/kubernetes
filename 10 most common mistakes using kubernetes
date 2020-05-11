@@ -1,0 +1,45 @@
+10 most common mistakes using kubernetes
+
+
+
+1. resources - requests and limits
+
+(please don't):
+    -- resources: {}
+    -- resources:
+        requests:
+            cpu: "1m"
+  ---You can see the current cpu and memory usage of pods
+        kubectl top pods
+        kubectl top pods --containers
+        kubectl top nodes
+
+ 2. liveness and readiness probes
+
+    People usually don't know the difference between these two.
+
+---->Liveness probe restarts your pod if the probe fails
+---->Readiness probe disconnects on fail the failing pod from the kubernetes
+service (you can check this in kubectl get endpoints) and no more 
+traffic is being sent to it until the probe succeeds again       
+
+3. LoadBalancer for every http service
+
+
+
+4.non-kubernetes-aware cluster autoscaling
+
+5.Not using the power of IAM/RBAC
+
+6. self anti-affinities for pods
+    Running e.g. 3 pod replicas of some deployment, node goes down 
+    and all the replicas with it. Huh? All the replicas were running
+    on one node? Wasn't Kubernetes supposed to be magical and provide
+    HA(High Availability)?!
+7. more tenants or envs in shared cluster
+
+8. externalTrafficPolicy: Cluster
+
+9. pet clusters + stressing the control plane too much
+
+10.bonus: using latest tag

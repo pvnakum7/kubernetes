@@ -1,0 +1,67 @@
+
+ Docker Swarm vs Kubernetes 
+ 
+
+#####################################################################
+Parameters 	        Docker Swarm 	                Kubernetes
+#####################################################################
+
+-Developed by 	        Docker Inc 	                 Google
+
+-Year Released 	        2013 	                        2014
+Scaling 	          No Autoscaling 	                    Auto-scaling
+
+-Cluster Setup 	    Setting up the cluster   	        Setting up the cluster is simple.   
+                    is challenging & complicated.       Requires only two commands.
+                    Cluster Strength is stronger.       Cluster Strength not as strong
+
+-Installation 	    Easy & fast 	                    Complicated & time-consuming.
+
+-Data volume 	    Shares storage volumes between      Shares storage volumes with any 
+                    multiple containers in              other container
+                    the same Pod.
+
+-Support for       	Allows you to use a . 	             It offers an in-built tool for 
+logging and         3rd party tool like ELK              logging and monitoring.   
+monitoring tool
+
+-Load balancing 	Does auto load-balancing 	        Manually configure your load balancing settings
+
+
+-Scalability 	    Scaling up is faster than K8S.  	Scaling up is slow compared to docker.
+                    But, it's cluster strength          However, guarantees stronger cluster state 
+                    is not as robust.                   Load balancing needs manual service configuration.
+
+-Updates 	        Agent update can be performed    	A cluster can be upgraded in place.
+                    in place.
+
+
+-Optimized For 	    Optimized for a single              Optimized for multiple smaller clusters of SDLC
+                    large cluster 
+
+-Tolerance ratio 	High fault tolerance 	            Low fault tolerance
+
+-Node Support 	    Supports 2000 > nodes 	            Supports up to 5000 nodes
+
+-Container Limit 	Limited to 95000 container 	        Limited to 300000 containers
+
+-Public cloud         	Azure only. 	                Google, Azure, and AWS.
+service provider
+
+-Slave 	            Worker 	                            Nodes
+
+-Compatibility 	    Less extensive and customizable 	More comprehensive and highly customizable
+
+-Community 	        An active user base which        	Offers strong support from open source
+                    regularly updates the software.     communities and big companies like Google, 
+                                                        Amazon, Microsoft, and IBM
+
+-Large clusters 	    Speed is considered             	Offers container deployment and scaling, 
+                    or the strong cluster states.       even in large clusters without considering the speed.    
+
+-Companies using 	Spotify, Pinterest,              	9GAG, Intuit, Buffer, Evernote, etc.
+                    eBay, Twitter, etc.
+
+-Github starts 	     53.8 k 	                        54.1 k
+
+-Github forks 	    15.5 k 	                            18.7 k 

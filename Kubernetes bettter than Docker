@@ -1,0 +1,45 @@
+
+
+  
+
+- Kubernetes bettter than Docker?
+Yes,
+
+- How?
+1. Kubernetes provides Auto-scaling whereas Docker Swarm doesn’t support autoscaling.
+
+2. Kubernetes supports up to 5000 nodes whereas Docker Swarm supports more than 2000 nodes.
+
+3. Kubernetes is less extensive and customizable whereas 
+	Docker Swarm is more detailed(Comprehensive) and highly customizable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Features of Kubernetes:
+
+
+    - Offers automated scheduling
+    - Self-Healing capabilities
+    - Automated rollouts & rollback
+    - Horizontal Scaling & Load Balancing
+    - Provides a higher density of resource utilization
+    - Offers enterprise-ready features
+    - Application-centric management
+    - Auto-scalable infrastructure
+    - You can create predictable infrastructure
+    - Provides declarative configuration
+    - Deploy and update software at scale
+    - Offers environment consistency for development, testing, and production 

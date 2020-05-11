@@ -1,0 +1,50 @@
+What is Kubernetes vs Docker?
+
+-Docker:
+    Docker is a platform useed to containerize your sofrtware ,
+    using which you can easily build your application,
+    package them with the dependencies required for your application
+    into the conitainer and further, there conitainer are easily shipped
+    to run on  other machine.
+  
+-Kubernetes:
+    Kubernetes is a container management System Developed by Google
+    platform. It help you to manage a conitainerized application in
+    various type of Physical, Virtual and Cloud Enviroments.
+
+
+- Kubernetes is an open-source container-orchestration system for 
+    automating application deployment, scaling, and management
+
+- It was originally designed by Google, and 
+is now maintained by the Cloud Native Computing Foundation.(CNCF)
+
+
+(Note:   A Docker Swarm is a group of either physical or virtual machines 
+    that are running the Docker application and that have been configured 
+    to join together in a cluster.
+)
+#########--- Docker Feature
+    - Easy Configure
+    - You ca use Swarm
+    - Manages Security
+    - Services
+    - More Productivity
+    - Application Isolation
+
+
+#########--- Kubernetes Feature
+    - Run Everywhere
+    - Automated
+    - Interaction
+    - Addition Services(management of Container Security ,networking, Storage  )
+    - Self Moniroting (Help of Container )
+    - Privede Horizontal Scaling
+
+
+
+
+
+
+---Why Kubernetes?
+

@@ -1,0 +1,8 @@
+kubeadm 
+
+
+--->Kubeadm is a new tool that is part of the Kubernetes
+    distribution as of 1.4. 0 which helps you to 
+    install and set up a Kubernetes cluster. 
+    One of the most frequent criticisms of Kubernetes is that 
+    it's hard to install.
