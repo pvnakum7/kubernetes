@@ -75,4 +75,7 @@ Verify that everything is running and communicating::
 
 	kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443
 
+Get al node list:
+Switch to the master server, and enter:
 
+	kubectl get nodes
