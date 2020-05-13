@@ -1,0 +1,30 @@
+#Recap - Replica kubernetes
+apiVersion: v1
+kind: ReplicationController
+metadata:             #this for Replica controller 
+    name: myapps-replica
+    lables:
+        app: myapp
+        type: front-end
+spec:                 #this for Replica controller
+    template:           # template simple is a one pod
+        metadata:       #this for POD controller 
+          name: my-podapp
+          lable: 
+            app: myapp
+            type: front-end
+        spec:           #this for POD controller
+          containers:   #list or array of images
+          - name: nginx-conitainer1    #first 
+            image: nginx:1.14.2  
+
+
+# run this replicas using below commnad
+# kubectl create -f recap-replica-kubernetes.yaml
+
+#get all replica list
+#kube ctl get replicationcontroler
+
+
+#ger pod list
+#kubectl get pods
