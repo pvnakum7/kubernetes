@@ -1,0 +1,77 @@
+Kube-controller manager kubernetes
+
+Various controller
+--- Node controller
+--- Replication controller
+--- Deployee controller
+--- Namespace controller
+--- Endpoint controller
+--- Job controller
+--- Service controller
+--- PV Protrection controller
+--- Pv-Binder-controller
+--- Stateful controller
+--- Replicaset 
+--- cronJob
+
+many more
+
+
+=================================
+  Get All controller using kube-controller manager
+    kube-controller-manager.Service
+
+===================================
+Also install various controller using kube-controller manager
+ also customise your controller
+
+---->View kube-controller-manager-kubeadm
+
+       kubectl get pods -n kube-system 
+
+-------------------------------------------
+
+View kube-controller-manager-options -kubeadm
+
+       cat /etc/systemd/system/kube-controller-manager.service
+
+---->All controller manager runing process
+
+    ps -aux | grep kube-controller-manager
+
+
+
+
+
+--->Kube-contreoller manager continue monitoring and require necessory 
+actine to remove or create to node
+
+____________________________
+Part 1 Node controller
+----------------------------
+--->for Example Node controller continuos monitoring
+    the status of node  and take the necessory action for application runing
+
+    this process using apiserver
+
+--- Node monitoring period every 5 Sec  of check health of node
+
+--- Node grace period (wait time)  40 Sec after that Unrechable
+
+--- POD Eviction TimeOut (come backup to runing)= 5 min
+
+--- If doesn't backup to run than goto replicaset
+__________________________
+Part 2 replicaset
+------------------
+
+--->check the number of port for runing nodes 
+
+when any doesn't exit or pod dies then
+create another one
+
+
+
+
+
+

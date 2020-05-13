@@ -1,0 +1,40 @@
+Recap - Pods kubernetes 
+
+--Container directly does not deploy in worker node
+
+    "for that require Pods"
+
+--Pods is sible object in kubernetes
+
+
+--------------
+
+Create Multiple Pod inside Single node
+        use bellow command to create multiple Pods(For 3 pods)
+
+     Docker run python-app
+
+     Docker run python-app
+
+     Docker run python-app   
+
+ and link  command
+
+    Docker run helper -link app1
+
+    Docker run helper -link app2
+    
+    Docker run helper -link app3
+
+
+
+
+
+ Kubectl
+ Nginx install in node -------------
+
+    Kubectl run nginx --image nginx
+    
+---> List of pods 
+
+    kubectl get pods

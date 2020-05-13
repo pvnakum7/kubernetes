@@ -1,0 +1,20 @@
+apiVersion: v1    #also we can use apps/v1beta2 when change kind
+kind: Pod   #name of task like deployement - apps/v1, Pod - v1, service - v1 , ReplicaSet - apps/v1
+metadata:
+  name: my-podapp
+spec:
+  containers:   #list or array of images
+    - name: nginx    #first 
+      image: nginx:1.14.2    #image version
+#     - name: backend    # second pods name
+#       image: redis    #second
+
+
+#run this yaml file using below commend:
+# kubectl create -f simple_pod_defination.yml
+
+# get pod list below:
+# kubectl get pods
+
+#get detail infomation about pod
+# kubectl describe pod my-podapp

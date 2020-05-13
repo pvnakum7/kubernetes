@@ -1,0 +1,58 @@
+Kube-apiserver kebernetes
+
+
+-->When some user request for node list then
+kube-apiserver retrive store data list fron ETCD
+
+    kubectl get nodes
+
+---> After Request ETCD update the data and pod created 
+
+    curl -X POST /api/va/namespace/default/pods....other
+
+
+--->Scheduler regular monitor that 
+after that kube schedure identify to new then request to kubelet 
+
+    kube-schedule 
+
+---> Kubelet get the request and kubelet create the part on the node 
+and run the conitainer image for deloying application
+
+
+--->After that done than kubelet update the api server to update 
+the data into EECD
+
+
+
+
+--->Main Work path of kube-apiserver
+
+1. Authenticate user
+2.Validate Request
+3.Retrive data
+4.Update ETCD
+5.Scheduler
+6.Kubelet
+
+
+
+-----------------------------
+Installing kube-apiserver:
+-----------------------------
+
+
+wget https://storage.googleapi.com/kubernetes-release/....../..more
+
+
+kube-apiserver.service
+
+
+--->kube api service located 
+
+cat /etc/systemd/system/kube-apiserver.service
+
+--->Check Runing Api runing processes
+
+    ps -aux | grep kube-apiserver
+

@@ -1,0 +1,41 @@
+Kube proxy kubernetes
+
+
+Kuberntetes all Node reach to another Node
+(
+Simple to say
+ look for new jobs 
+    and create rule for those service to trafic forward to 
+        backend nodes
+)
+
+or is a process and run in every nodes
+---its job is loook for new services
+
+---and every service created  accurate (appropriate) rule 
+    to  forward trafic to backend node
+
+    
+
+pod nework is a internal network between the nodes
+
+
+*********************
+"install Proxy"
+
+    wget https://storage.googleapis.com/kubernetes....../more
+
+service run comma is 
+    kube-proxy.service
+
+
+Get all proxy list
+
+    kubectl get pods -n kube-system
+
+
+    or  single node
+
+    kubectl get nodesname1 -n kube-system
+
+

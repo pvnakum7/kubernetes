@@ -1,0 +1,31 @@
+kubelet kubernetes
+
+
+Responsibility For 
+--load and unload in nodes
+-- Connection with masternode  
+-- various status of nodes
+
+flow or work of kubelets
+
+- Rregistration nodes
+
+- Create pods
+
+- Monitors node & pods
+
+
+_=_+_+_=_+==-=-+_=-+-=-++-+-=-=_=_-=+=_=-=_
+Installing Kubelet
+------------------------------
+wget https://storage.googleapis.com/.....more ...
+
+Note:
+
+When Use Kubeadm for deploy code then 
+*Doesn't deployee code automatically*
+
+
+Get List Kubelet Processes
+
+ps -aux | grep kubelet

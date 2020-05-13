@@ -1,0 +1,22 @@
+Kube-scheduler Kubernetes
+
+
+-- Only Responsible for which part goes in which node
+ 
+
+-- instal scheduler
+
+ wget https://storage.googleapis.com/...../more
+
+
+
+-- Get All Kube Scheduler List
+    kube-scheduler.service
+
+
+---Various kube scheduler Options
+
+cat /etc/kuberneter/manifests/kube-scheduler.yaml
+
+
+
