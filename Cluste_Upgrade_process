@@ -1,0 +1,22 @@
+Cluster Upgrade process-
+
+
+1.
+all node down and update it
+
+2. one by one update node
+
+3. create new node and move work load in New Node 
+after then old node delete it
+
+
+
+#--Check upgrade Cluster OS
+
+Command:
+---->   kubeadm upgrade plan
+
+---output is current version and also upgrade version for update
+
+
+

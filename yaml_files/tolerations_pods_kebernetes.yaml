@@ -1,0 +1,55 @@
+# tolerations pod kubernetes
+
+#-->Tolerations for PODS
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "node.kubernetes.io/unreachable"           #"example-key"
+    operator: "Exists"
+    effect: "NoSchedule"
+    tolerationSeconds: 3600
+
+
+
+
+#    also use equal tolerations
+    tolerations:
+#    - key: "node.kubernetes.io/unreachable""
+#    operator: "Equal"
+#    value: "value"
+#    effect: "NoSchedule"
+
+
+
+#and A Pod has Two Tolerations:
+
+#    tolerations:
+#    - key: "key1"
+#    operator: "Equal"
+#    value: "value1"
+#    effect: "NoSchedule"
+#    - key: "key1"
+#    operator: "Equal"
+#    value: "value1"
+#    effect: "NoExecute"
+
+
+
+#The NoExecute taint effect, mentioned above, affects pods that are already running on the node as follows
+
+#--->    pods that do not tolerate the taint are evicted immediately
+#---->    pods that tolerate the taint without specifying tolerationSeconds 
+#       in their toleration specification remain bound forever
+# ---->  pods that tolerate the taint with a specified tolerationSeconds 
+#        remain bound for the specified amount of time

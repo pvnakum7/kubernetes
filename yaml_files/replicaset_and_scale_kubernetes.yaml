@@ -1,0 +1,64 @@
+#Replicaset and Scale kubernetes
+apiVersion: apps/v1  #if this type app version note use than get error like:
+                     #error: unable to recognize replicaset***.yaml: mo natch found kind=Replicaset   
+kind: ReplicaSet
+metadata:             #this for Replicaset  
+  name: myapps-replicaset
+  lables:
+      app: myapp
+      type: front-end
+spec:                 #this for Replicaset
+  template:           # template simple is a one pod
+      metadata:       #this for POD controller 
+        name: my-podapp
+        lable: 
+          app: myapp
+          type: front-end
+      spec:           #this for POD controller
+        containers:   #list or array of images
+        - name: nginx-conitainer1    #first 
+          image: nginx:1.14.2  
+replicas: 3     # this number for 
+selector:
+  matchLables:
+    type: front-end
+
+
+
+# run this replicas using below commnad
+# kubectl create -f recap-replica-kubernetes.yaml
+
+#get all replica list
+#kube ctl get replicationcontroler
+
+
+#ger pod list
+#kubectl get pods
+
+
+##Scale  for use change replicas number  
+#One Way : Just change numbe in yaml file and run yaml file
+
+# kubectl replace -f relicaset_kubernetes.yaml
+
+#Second Way:
+# kubectl scale --replicas=6 -f replicaset_kebernetes.yaml
+
+#third way: 
+#kubectl scale --replicas=6 replicaset myapp-replicaset
+#                              type         name here inside yaml file
+  
+  # Above third line info                
+
+
+  #get list Replica set
+#     kubectl get replicaset
+
+#Delete replica set
+
+#     kubectl delete replicaset myapp-replicaset 
+#note: Here  also delete All PODs
+
+
+#Replace or update replicaset commnad:
+#     kubectl replace -f replicaset_kubernetes.yaml

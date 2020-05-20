@@ -1,0 +1,26 @@
+#selector, Lable  kubernetes
+apiVersion: apps/v1  #if this type app version note use than get error like:
+                     #error: unable to recognize replicaset***.yaml: mo natch found kind=Replicaset   
+kind: ReplicaSet
+metadata:             #this for Replicaset  
+  name: myapps-replicaset
+  lables:
+      app: myapp1
+      type: front-end
+spec:                 #this for Replicaset
+  replicas: 3     # this number for replicas
+  selector:             #this for filtering
+  matchLables:          #check match item found    
+    type: front-end     
+  
+  template:           # template simple is a one pod
+      metadata:       #this for POD controller 
+        name: my-podapp
+        lable: 
+          app: myapp1
+          type: front-end
+      spec:           #this for POD controller
+        containers:   #list or array of images
+        - name: nginx-conitainer1    #first 
+          image: nginx:1.14.2  
+

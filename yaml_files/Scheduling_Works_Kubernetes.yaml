@@ -1,0 +1,22 @@
+#Scheduling Works Kubernetes
+
+apiVersion: v1    #also we can use apps/v1beta2 when change kind
+kind: Pod   #name of task like deployement - apps/v1, Pod - v1, service - v1 , ReplicaSet - apps/v1
+metadata:
+  name: my-nginx
+  lables:
+    name: my-nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+      ports:
+      - containerPort: 8080
+  nodeName: node02
+
+#this pod file for No scheduler
+
+
+
+
+

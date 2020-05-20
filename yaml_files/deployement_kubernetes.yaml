@@ -1,0 +1,39 @@
+#deployement  kubernetes
+apiVersion: apps/v1  #if this type app version note then get error
+kind: Deployement
+metadata:             #this for deploye  
+  name: myapps-deploy
+  lables:
+      app: myapp
+      type: front-end
+spec:                 #this for deploye
+  template:           # template simple is a one pod
+      metadata:       #this for POD controller 
+        name: myapps-deploy
+        lable: 
+          app: myapp
+          type: front-end
+      spec:           #this for POD controller
+        containers:   #list or array of images
+        - name: nginx-conitainer1    #first 
+          image: nginx:1.14.2  
+replicas: 3     # this number for 
+selector:
+  matchLables:
+    type: front-end
+
+
+
+# ##run this deploye using below commnad
+#   kubectl create -f deployemet_kubernetes.yaml
+
+###get all deploye list
+#   kubectl get deployements
+
+###get all replicaset list
+#   kubectl get replicaset
+
+
+#ger pod list
+#   kubectl get pods
+

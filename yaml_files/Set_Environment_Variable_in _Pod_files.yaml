@@ -1,0 +1,82 @@
+##set Environment  Variable in pod files
+
+apiVersion: v1    #also we can use apps/v1beta2 when change kind
+kind: Pod   #name of task like deployement - apps/v1, Pod - v1, service - v1 , ReplicaSet - apps/v1
+metadata:
+  name: nginx-deployement
+spec:
+  selector:
+    matchLables:
+      app: nginx
+  replicas: 2  #tells deployement to run 2 pods matching template    
+  template:
+    metadata:
+      lables:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+        env:               ##type 1   # this for set Environment  variable in container type 1
+        - name: GREETING
+          value: "Warm greetings to"
+        - name: HONORIFIC
+          value: "The Most Honorable"
+        - name: NAME
+          value: "Kubernetes"
+        command: ["echo"]
+        args: ["$(GREETING) $(HONORIFIC) $(NAME)"]    ##type 1 end
+
+
+
+# # #############################
+# # Second 2 type:
+# # replace bellow env part:
+#            ##type 2  # this for set Environment  variable in container type 1
+#         env:
+#           - name: ACCEPT_LICENSE    #for Licence
+#             valueFrom: 
+#               configMapKeyRef:
+#                 name: license
+#                 key: accept.license
+#           - name: SSG_DATABASE_JDBC_URL     #for Database URL second 2 type
+#             valueFrom:
+#               configMapKeyRef:
+#                 name: env
+#                 key: ssg-database-jdbc-url.env  
+#           - name: SSG_ADMIN_USERNAME    #for username Third 3 type
+#             valueFrom: 
+#               secretKeyRef:
+#                 name: gw-secret
+#                 key: ssg.adminusername  
+#                  
+        
+# # #############################
+# ######Third 3 type
+# #replace belloe env part:
+#        env:
+#         - name: SSG_ADMIN_PASSWORD    #for password Set 
+#                     valueFrom: 
+#                       secretKeyRef:
+#                         name: gw-secret
+#                         key: ssg.adminpassword
+
+
+
+####Forth one is Pod configuration
+
+
+  # - name: WHO
+  #   valueFrom:
+  #     fieldRef:
+  #       fieldPath: spec.nodeName
+
+#####  Pod configuration that can be accessed
+
+    # 1. Pod name: metadata.name
+    # 2. Node name: spec.nodeName
+    # 3. Pod namespace: metadata.namespace
+    # 4. Pod IP: status.podIP
+    # 5. Pod service account: spec.serviceAccountName

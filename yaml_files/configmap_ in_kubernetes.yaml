@@ -1,0 +1,51 @@
+##config_maps_in_kubernetes_file
+apiVersion: v1
+kind: ConfingMap
+metdata:
+    name: app-config
+data:
+    APP_COLOR: blue
+    APP_MODE: prod
+    port: 3306              #this 2 line for MYsql -Confing file
+    max_allowed_packet: 128M
+    # port: 6379              #this 2 line for redid-config 
+    # rdb-compression: yes        
+
+
+
+##Run this file use bellow #Command
+
+#       kubectl create -f configmap_in_kubernetes.yaml
+##View Config Map
+
+ #      kubectl get configmaps
+ #map Description details command
+
+ #      kubectl describe configmaps
+
+ 
+     
+
+##Command 1:
+        
+#        kubectl create configmap config-name --from-literal=<key>=<value>
+
+##Command 2:
+
+#        kubectl create configmap 
+#            \ app-config --from-literal=APP_COLOR=blue 
+#            \ from-literal=app_MOD=prod
+
+#Command3: 
+
+#        kubectl create configmap \ <config-name> --from-file=<path-of-file>
+
+#Command 4 :
+#        kebectl create configmap \ app-config --from-file=app_config.pr
+
+
+
+
+
+
+

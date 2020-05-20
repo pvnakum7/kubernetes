@@ -1,0 +1,26 @@
+ # Taint node kubernetes
+ # Taints are the opposite – they allow a node to repel(Delete) a set of pods.
+ # Node affinity, is a property of Pods that attracts them to a set of nodes 
+
+ #command for Taint  - node
+
+  #demo
+#  kubectl taint nodes node-name key=value:taint-effect
+                                            taint-effect= NoSchedule | PreferNoSchedule | NoExecute
+
+  # example:
+
+#  kubectl taint nodes myfirstnode app=myapps:NoSchedule
+
+
+
+
+
+##this for yaml file key value
+    # node.kubernetes.io/unreachable
+    # node.kubernetes.io/not-ready
+    # node.kubernetes.io/memory-pressure
+    # node.kubernetes.io/disk-pressure
+    # node.kubernetes.io/out-of-disk (only for critical pods)
+    # node.kubernetes.io/unschedulable (1.10 or later)
+    # node.kubernetes.io/network-unavailable (host network only)

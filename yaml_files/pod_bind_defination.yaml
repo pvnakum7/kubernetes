@@ -1,0 +1,12 @@
+#pod_bind_defination.yaml
+
+apiVersion: v1
+kind: Binding
+metadata:
+  name: my-nginx
+target:
+  apiVersion: v1
+  king: Node
+  name: node02
+
+  

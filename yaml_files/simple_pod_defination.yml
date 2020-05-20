@@ -4,14 +4,14 @@ metadata:
   name: myapp-pod
   lable: 
     app: myapp
-    type: front-end 
+    type: front-end
 spec:
   containers:   #list or array of images
   - name: nginx-conitainer1    #first 
     image: nginx:1.14.2    #image version
 
-#   - name: backend    # second pods name
-#     image: redis    #second
+  - name: backend    # second pods name
+    image: redis    #second
 
 
 #run this yaml file using below commend:

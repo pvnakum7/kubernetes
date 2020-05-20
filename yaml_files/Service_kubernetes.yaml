@@ -1,0 +1,17 @@
+#Service_kubernetes.yaml
+
+apiVersion: v1  #if this type app version note use than get error like:
+                     #error: unable to recognize replicaset***.yaml: mo natch found kind=Replicaset   
+kind: Service
+metadata:             #this for Replicaset  
+  name: myapps-service
+  lables:
+      app: myapp1
+      type: front-end
+spec:                 #this for Replicaset
+  selector:             #this for filtering
+    app: myapp1
+  ports:
+  - protocol: TCP  
+    port: 80
+    targetPort: 9376
